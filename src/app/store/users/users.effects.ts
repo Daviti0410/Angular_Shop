@@ -14,7 +14,9 @@ export class UsersEffects {
       ofType(loadUsers),
       tap(() => console.log('Effect Triggered: loadUsers$')),
       mergeMap(() =>
-        this.http.get<any[]>('http://localhost:4000/api/meetings/pages').pipe(
+        this.http.get<any[]>('http://localhost:4000/api/meetings/pages', {
+          withCredentials: true,
+        }).pipe(
           tap(users => console.log('API Response:', users)),
           map(users => loadUsersSuccess({ users })),
           catchError(error => {

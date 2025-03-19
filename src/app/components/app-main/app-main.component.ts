@@ -6,10 +6,12 @@ import { AsyncPipe, NgIf, CommonModule } from '@angular/common';
 import { AppState } from '../../store/app.state';
 import { loadUsers } from '../../store/users/users.actions';
 import { selectAllUsers, selectLoading, selectError } from '../../store/users/users.selector';
+import {HeaderComponent} from '../header/header.component';
+
 
 @Component({
   selector: 'app-main',
-  imports: [NgIcon, AsyncPipe, NgIf, CommonModule],
+  imports: [NgIcon, AsyncPipe, NgIf, CommonModule, HeaderComponent],
   providers: [provideIcons({ heroBars2 })],
   standalone: true,
   templateUrl: './app-main.component.html',

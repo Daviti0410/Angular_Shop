@@ -16,6 +16,6 @@ export const appConfig: ApplicationConfig = {
 
     provideHttpClient(),
     provideStore(reducers),
-    provideEffects(UsersEffects)
+    provideEffects(UsersEffects),
   ]
 };
