@@ -1,0 +1,23 @@
+<section class="active_openings">
+  <div class="event_content">
+NOt Found
+  </div>
+  <div class="event_list">
+    <h2 class="event_header">Active openings <span>1</span></h2>
+    <div class="event_elements">
+      <ng-icon id="two_lines" name="heroBars2" />
+      <label>NO level Trainee Front-end Developer</label>
+    </div>
+  </div>
+</section>
+
+<section *ngIf="loading$ | async">Loading...</section>
+<section *ngIf="error$ | async as error">Error: {{ error }}</section>
+
+<section *ngIf="users$ | async as users">
+  <div *ngFor="let user of users">
+    <h3>{{ user.name }}</h3>
+    <p>Email: {{ user.email }}</p>
+    <p>Phone: {{ user.phone }}</p>
+  </div>
+</section>
